@@ -1,0 +1,80 @@
+Why use Docker?
+
+Docker attempts to solve problem where by errors appear during software installation.
+
+    For example, npm packages requiring certain node version etc. 
+
+    Docker in a nut shell:
+        On mac redis installation guide does not work simply by copy pasting https://redis.io/downloadc copy
+            docker run -it redis on the other hand installs redis 
+
+Takeaway: 
+    Docker makes it really easy to install and run software without worrying about setup or dependencies.
+
+What is Docker? 
+    Docker is a platform containing a number of apps/tools(Docker Client, Server, Machine, Images, Hub, Compose)
+     in its ecosystem for creating and running containers.
+
+    Image:
+        Single file with all the dependencies and configurations required to run a program.
+
+    Container:
+        An instance of an image (runs a program).
+
+    When we ran 'docker run -it redis' the Docker CLI, reached out the Docker Hub and downloaded an image.
+
+Docker for Mac/Windows:
+    Docker Client:
+        Also known as Docker Command Line Interface(CLI), is a tool we are going to use to issue commands to.
+
+    Docker Server:
+        Also known as a Docker Daemon, is a tool responsible for creating images, running containers, etc.
+
+Mac OSX:
+    1. Need to sign up for an account.
+    2. Download docker for mac
+    3. Docker ID publicly visible, install and login to Docker
+        verify installation with docker version
+
+    Windows has a similar installation guide.
+
+    https://docs.docker.com/install/linux/docker-ce/ubuntu/#prerequisites
+
+        On all linux oss' must uninstall older versions of Docker
+        
+        For Ubuntu (which is what I am using)
+
+            sudo apt-get remove docker docker-engine docker.io containerd runc
+
+        Community package is now called docker-ce
+
+            terminal installation commands:
+
+                # Step 1
+                sudo apt-get update
+                
+                # Step 2
+                sudo apt-get install \
+                apt-transport-https \
+                ca-certificates \
+                curl \
+                gnupg-agent \
+                software-properties-common
+
+                # Step 3
+                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+                # Step 3
+                sudo apt-key fingerprint 0EBFCD88
+
+                # Step 4 (bionic, x86_64)
+                sudo add-apt-repository \
+                "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+                $(lsb_release -cs) \
+                stable"
+
+                # Step 5
+                sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+                # Step 6 verify installation
+                sudo docker run hello-world
