@@ -185,3 +185,28 @@ Listing All Running Containers && Processes
 
     docker ps --all
             # |-> --all flag lists every docker container ever ran on machine
+
+Container Life Cycle
+
+    Creating and running a container are 2 separate processes.
+
+        docker run = docker create;  docker start
+
+        # Create a Container
+        docker create <image-name>
+                # |-> Attempt to create a Container from an Image
+        
+        # Start a Container
+        docker start <container_id>
+                # |-> Attempt to run container process
+                # |-> Id of container do start
+
+    For example:
+
+        > user@user:~$ docker create hello-world
+        < 91394c85b3a73619114a493b5094573087602b888fc7329eb58fe8487b3a93fe (returns the container id)
+        > user@user:~$ docker -a start hello-world
+        < ... returns hello-world output
+
+        # -a flag in docker start, tells Docker to watch for the Containers output, then forward it to
+        # our terminal
