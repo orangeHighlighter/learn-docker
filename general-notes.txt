@@ -141,3 +141,7 @@ What's a Container?
     
     Docker Container:
         Combines concept of namespacing and control grouping
+        A container is a running process along with a subset of physical resources allocated to the same.
+        An Image is a snapshot of the file system required to run the process, along with a StartUp Command
+
+    
