@@ -210,3 +210,16 @@ Container Life Cycle
 
         # -a flag in docker start, tells Docker to watch for the Containers output, then forward it to
         # our terminal
+
+Restarting Stopped Containers
+
+    When a container completes executing its process and exits, we can start it back up.
+
+    docker start -a <container_id> 
+
+    to get container_id, use docker ps --all
+
+    IMPORTANT: 
+        After a container has been created, we CANNOT replace the default override command!
+    
+     
