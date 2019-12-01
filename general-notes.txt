@@ -109,3 +109,13 @@ Mac OSX:
                 
 Using the Docker Client
 
+    Flow:
+        # P1 run cli command 
+        docker run hello-world
+            # |-> Starts Docker Client (CLI)
+                # |-> After successfully starting Docker Client communicates commands to Docker Server
+                    # |-> Docker Server checks Image Cache for hello-world container
+                        # |-> If image does not exist, Docker Server connects to Docker Hub 
+                            # Docker Hub is a repository of free Docker Images
+                            
+
