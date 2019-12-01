@@ -170,3 +170,18 @@ Docker CLI commands
     # |-> creates busybox Docker Container, and process is ls -a, not the busybox startup command!
     # !!! To chain multiple override commands, add a semicolon(;) after each command
 
+Listing All Running Containers && Processes
+
+    docker ps
+          # |->  List all running containers
+        
+    To view processes can execute,
+        
+        docker run busybox ping google.com 
+
+    which measures latency to google server(s), and running docker ps subsequently shows the process
+
+    To kill running processes, use ctrl + c command
+
+    docker ps --all
+            # |-> --all flag lists every docker container ever ran on machine
