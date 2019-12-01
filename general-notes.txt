@@ -90,3 +90,22 @@ Mac OSX:
 
                 # Step 3 verify installation
                 docker-compose --version
+
+            running docker without sudo
+                https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user
+                
+                # Step 1
+                sudo groupadd docker
+
+                # Step 2 
+                sudo usermod -aG docker $USER
+
+                # Step 3
+                newgrp docker 
+
+                # Step 4 verify docker runs without sudo
+                docker run hello-world
+
+                
+Using the Docker Client
+
