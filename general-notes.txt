@@ -117,5 +117,27 @@ Using the Docker Client
                     # |-> Docker Server checks Image Cache for hello-world container
                         # |-> If image does not exist, Docker Server connects to Docker Hub 
                             # Docker Hub is a repository of free Docker Images
-                            
 
+
+What's a Container? 
+
+    Hypothetically, if 2 (A & B) programs need different versions of the same dependency to run correctly,
+    and we are constrained to installing a single version only, it follows that only one of the 2 afore 
+    mentioned programs can run locally.
+
+    We can resolve the dependency issue by fragmenting (name spacing) our hard drive, such that specific
+    memory addresses are dedicated to storing each of the required dependency version.
+
+    When program A or B make a call, the kernel will need to figure out which process the call is coming from
+    and read from the correct fragment.
+
+    Namespacing:
+        Isolate resource per group of processes (can be used to restrict access to Network, communications to 
+        other processes, etc.)
+
+    Control Groups (cgroups):
+        Unlike namespacing, control groups are used to restrict the amount of resources a process group can use.
+        (Restrict memory, cpu usage, i/o, bandwidth)
+    
+    Docker Container:
+        Combines concept of namespacing and control grouping
