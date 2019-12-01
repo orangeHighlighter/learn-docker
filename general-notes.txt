@@ -242,3 +242,33 @@ Retrieving Log Outputs
         Calling docker logs, DOES NOT, rerun or recreate the container! Only retrieves logs
         emitted from container
 
+Stopping Containers
+
+    For example:
+        > docker create busybox ping google.com
+        < container_id
+        > docker start container_id # did not add -a 
+        < container_id 
+        > docker logs container_id
+        < ... container logs
+        > docker ps --all
+        < ... container data
+
+    To stop the docker start container, we can call 1 of 2 possible commands
+
+        docker stop <container_id>
+        OR 
+        docker kill <container_id>
+
+        docker stop
+            |-> sends SIGTERM (hardware termination signal from GNU C Library, 
+                short for terminate signal)
+            |-> allows process to shut down on its schedule, do cleanup, save file,
+                emit message, etc.
+
+        docker kill
+                |-> sends SIGKILL (short for kill signal, immediately terminates
+                    the running process)
+        
+        When docker stop is called, if container does not stop within 10 seconds,
+        docker will automatically default to docker kill
