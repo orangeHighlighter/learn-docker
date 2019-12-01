@@ -221,5 +221,14 @@ Restarting Stopped Containers
 
     IMPORTANT: 
         After a container has been created, we CANNOT replace the default override command!
+
+Deleting Stopped Containers
+
+    To delete Containers that are taking up memory, run
+
+    docker system prune
+
+    IMPORTANT:
+        docker system prune will also delete other items, including docker build cache
+            where build cache is any image fetched from the Docker Hub repository
     
-     
