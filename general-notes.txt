@@ -231,4 +231,14 @@ Deleting Stopped Containers
     IMPORTANT:
         docker system prune will also delete other items, including docker build cache
             where build cache is any image fetched from the Docker Hub repository
-    
+
+Retrieving Log Outputs
+
+    To get logs from a container, use
+
+    docker logs <container_id>
+
+    IMPORTANT:
+        Calling docker logs, DOES NOT, rerun or recreate the container! Only retrieves logs
+        emitted from container
+
