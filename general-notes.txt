@@ -144,4 +144,18 @@ What's a Container?
         A container is a running process along with a subset of physical resources allocated to the same.
         An Image is a snapshot of the file system required to run the process, along with a StartUp Command
 
+Docker CLI commands
+
+    # Alias docker
+    docker
+        |-> References to the docker client
+
+    # Flag run
+    docker run
+            |-> Attempt to create and start a container process
+    
+    # Flag image 
+    docker run <image-name>
+                    |-> Name of the image to use for this container
+
     
