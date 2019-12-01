@@ -158,4 +158,15 @@ Docker CLI commands
     docker run <image-name>
                     |-> Name of the image to use for this container
 
-    
+    # Flag to override default behavior 
+    docker run <image-name> [command1, command2, ...]
+                                |-> default command override, executes once Container started up
+    # for example:
+    docker run busybox echo hi there
+    # where busybox is name of image, echo is command override,
+    # and 'hi there' is argument passed to echo, (note: this won't work with hello-world as it is
+    # a single file, where as busybox emulates an OS)
+    docker run busybox ls -a 
+    # |-> creates busybox Docker Container, and process is ls -a, not the busybox startup command!
+    # !!! To chain multiple override commands, add a semicolon(;) after each command
+
