@@ -331,3 +331,22 @@ Container Isolation
 
     Unless we explicitly create a connection between multiple containers,
     they remain isolated from one another, and data cannot be shared.
+
+Creating Docker Images
+
+    # Step 1 
+    Create Dockerfile 
+        # |-> plain text file with configurations to define how container should behave
+        # |-> What different programs it will contain and what it will do when it starts up as a container
+    # Step 2
+    Pass off Dockerfile to Docker Client
+    # Step 3 
+    Docker Client sends file to Docker Server, which builds a the Image
+    # Step 4
+    Usable Image
+
+    Creating a Dockerfile
+        i) specify a base image,
+        ii) run commands to install additional programs/dependencies
+        iii) specify a command to run container startup 
+            |-> (command used to docker run specified image)
