@@ -272,3 +272,22 @@ Stopping Containers
         
         When docker stop is called, if container does not stop within 10 seconds,
         docker will automatically default to docker kill
+
+Multi-Command Containers && Executing Commands in Running Containers
+
+    docker run redis
+        # |-> redis-server runs in container
+        # |-> thus we do not have access to redis-cli
+
+    To resolve this issue we will use another Docker command
+
+    docker exec -it <container_id> <command>
+        # where:
+            # exec (short for execute), used to execute an additional command in a container
+            # -it is a flag that enables us to provide input to the container
+            # We should be able to chain commands using semicolons (;)
+        # calling docker exec <container_id> <command>, runs the command,
+        # but because redis-cli realized it can't be provided any input it closes down
+        # then send us back to our local terminal
+
+
