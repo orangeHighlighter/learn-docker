@@ -317,3 +317,17 @@ Command Prompt in a Container
         ctrl + d to kill terminal 
 
     Command Processors: bash, powershell, zsh, sh
+
+Starting with a shell (alternative use of docker run)
+
+    docker run -it <image-name> sh
+
+    # Command above opens a terminal immediately when container first starts
+    # creating a terminal will prevent the default commands from running
+
+Container Isolation
+
+    2 or more containers do not automatically share their file system.
+
+    Unless we explicitly create a connection between multiple containers,
+    they remain isolated from one another, and data cannot be shared.
