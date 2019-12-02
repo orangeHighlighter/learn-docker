@@ -290,4 +290,20 @@ Multi-Command Containers && Executing Commands in Running Containers
         # but because redis-cli realized it can't be provided any input it closes down
         # then send us back to our local terminal
 
+-it flag
 
+    Every process that we create in Linux has 3 communication channels attached to it.
+        STDIN (Standard Input)
+        STOUT (Standard Output)
+        STDERR (Standard Error)
+    These channels are used to communicate information either into or out of the process.
+
+    The -it flag is 2 flags combined in 1
+        |-> -i -t, but we shorten it by convention
+
+    -i 
+        tells docker when it executes the new command inside the container,
+        we wish to attach our terminal to the STDIN channel of the target process.
+
+    -t 
+        formats input and output text to our terminal from the process itself
