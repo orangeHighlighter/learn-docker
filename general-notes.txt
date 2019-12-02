@@ -307,3 +307,13 @@ Multi-Command Containers && Executing Commands in Running Containers
 
     -t 
         formats input and output text to our terminal from the process itself
+
+Command Prompt in a Container
+    
+    To open a terminal in the context of the running docker container, call
+
+        docker exec -it <container_id> sh
+
+        ctrl + d to kill terminal 
+
+    Command Processors: bash, powershell, zsh, sh
