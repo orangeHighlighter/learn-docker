@@ -350,3 +350,26 @@ Creating Docker Images
         ii) run commands to install additional programs/dependencies
         iii) specify a command to run container startup 
             |-> (command used to docker run specified image)
+
+Building a Dockerfile
+
+    ex. create image that runs a redis-server ("from" scratch)
+
+    # Step 1 - create a working directory (redis-image) # mkdir redis-image
+    # Step 2 - create 'Dockerfile' #  touch Docker
+    # Step 3 - add configuration
+    # Step 4 - from parent directory call docker build ./redis-image/.
+        |-> IMPORTANT: trailing dot (.) is REQUIRED 
+
+Dockerfile Teardown
+
+    FROM, RUN, CMD are Docker instructions to tell Docker Server what to do
+    
+    Following each instruction is an argument to the instruction
+        ie. alpine, apk add -update redis, ["redis-server"]
+
+    FROM    -   specifies Docker Image we wish to use as a base
+    RUN     -   execute command while we are preparing the image
+    CMD     -   (short for command) specify what should be executed, 
+                when image is used to create a new container
+                
